@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import { forwardRef, type InputHTMLAttributes } from "react";
 
 interface InputProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -8,6 +8,11 @@ interface InputProps extends Omit<
   className?: string;
 }
 
-export default function Input({ className = "", ...props }: InputProps) {
-  return <input className={className} {...props} />;
+function Input(
+  { className = "", type, ...props }: InputProps,
+  ref: React.ForwardedRef<HTMLInputElement>,
+) {
+  return <input ref={ref} type={type} className={className} {...props} />;
 }
+
+export default forwardRef(Input);
