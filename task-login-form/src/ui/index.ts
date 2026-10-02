@@ -1,3 +1,5 @@
 export { default as Button } from "./button/Button";
 export { default as Input } from "./input/Input";
 export { default as Label } from "./label/Label";
+export { default as ErrorMessage } from "./errorMessage/ErrorMessage";
+export { default as Loader } from "./loader/Loader";

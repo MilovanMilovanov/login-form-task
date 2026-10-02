@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { LoginForm } from "../components";
 import { useState } from "react";
+import { Loader } from "../ui";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function HomePage() {
   return (
     <main>
       {isLoading ? (
-        <div>Loading Star Wars data...</div>
+        <Loader>Loading Star Wars data...</Loader>
       ) : (
         <LoginForm action={handleLoginSuccess} />
       )}
